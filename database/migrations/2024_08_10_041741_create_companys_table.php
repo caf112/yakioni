@@ -17,7 +17,7 @@ class CreateCompanysTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('status');
-            $table->integer('tag');
+            $table->string('tag');
             $table->string('place');
             $table->string('url');
             $table->text('comment');

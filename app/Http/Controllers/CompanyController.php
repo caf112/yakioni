@@ -40,13 +40,16 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|max:255',
-            'body' => 'required'
+            'name' => 'required|max:255'
         ]);
         $company = new Company();
         $company->user_id = \Auth::id();
-        $company->title = $request->title;
-        $company->body = $request->body;
+        $company->name = $request->name;
+        $company->status = $request->status;
+        $company->tag = $request->tag;
+        $company->place = $request->place;
+        $company->url = $request->url;
+        $company->comment = $request->comment;
         $company->save();
 
         return redirect(route('companys.index'));
@@ -88,11 +91,14 @@ class CompanyController extends Controller
     {
         $this->authorize($company);
         $this->validate($request, [
-            'title' => 'required|max:255',
-            'body' => 'required'
+            'name' => 'required|max:255'
         ]);
-        $company->title = $request->title;
-        $company->body = $request->body;
+        $company->name = $request->name;
+        $company->status = $request->status;
+        $company->tag = $request->tag;
+        $company->place = $request->place;
+        $company->url = $request->url;
+        $company->comment = $request->comment;
         $company->save();
         return redirect(route('companys.show', $company));
     }
