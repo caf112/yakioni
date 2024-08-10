@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
@@ -11,4 +12,5 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resource('/articles', ArticleController::class);
+    Route::resource('/companys', CompanyController::class);
 });
