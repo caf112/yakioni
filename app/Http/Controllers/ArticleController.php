@@ -46,6 +46,9 @@ class ArticleController extends Controller
         $article = new Article();
         $article->user_id = \Auth::id();
         $article->title = $request->title;
+        $article->status = $request->status;
+        $article->tag = $request->tag;
+        $article->url = $request->url;
         $article->body = $request->body;
         $article->save();
 
@@ -92,6 +95,9 @@ class ArticleController extends Controller
             'body' => 'required'
         ]);
         $article->title = $request->title;
+        $article->status = $request->status;
+        $article->tag = $request->tag;
+        $article->url = $request->url;
         $article->body = $request->body;
         $article->save();
         return redirect(route('articles.show', $article));
