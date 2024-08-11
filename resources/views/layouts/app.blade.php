@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>焼きおに</title>
     <link rel="stylesheet" href="/main.css">
 </head>
 <body>
     <header>
-        <a href="/" class="site-title">ミニブログ</a>
+        <a href="/" class="site-title">焼きおに</a>
         <nav class="tab">
             <ul>
                 @if (Auth::check())
                 <li><a class="tab-item{{ Request::is('home') ? ' active' : ''}}" href="{{ route('home') }}">マイページ</a></li>
-                <li><a class="tab-item{{ Request::is('articles') ? ' active' : ''}}" href="{{ route('articles.index') }}">記事検索</a></li>                
+                <li><a class="tab-item{{ Request::is('articles') ? ' active' : ''}}" href="{{ route('articles.index') }}">企業情報一覧</a></li>                
                 <li>
                     <form on-submit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
                         @csrf
@@ -34,7 +34,7 @@
 
     </main>
     <footer>
-        &copy; Laravel8 入門から開発実践まで
+        &copy; 就活カレンダー
     </footer>
 </body>
 </html>

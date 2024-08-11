@@ -8,7 +8,7 @@ select,
 textarea {
     width: 100%;
     padding: 8px;
-    border: 1px solid #bbb;
+    border: 1px solid #8B4513; /* 焼きおにぎりの焦げた部分 */
     border-radius: 4px;
 }
 header {
@@ -16,8 +16,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-    background: #4470b1;
+    border-bottom: 1px solid rgba(139, 69, 19, 0.15); /* 焦げた部分の薄い色 */
+    background: #8B4513; /* 焼きおにぎりの焦げた部分 */
     color: rgba(255, 255, 255, .7);
 }
 .site-title {
@@ -29,12 +29,12 @@ header {
 ul.alert {
     padding: 15px 15px 15px 40px;
     border-radius: 4px;
-    background: #f8d6d9;
+    background: #F5DEB3; /* おにぎりの部分 */
     color: #721c24;
 }
 .article-item {
     padding: 20px 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #8B4513; /* 焼きおにぎりの焦げた部分 */
 }
 .article-title {
     margin-bottom: 10px;
@@ -46,13 +46,13 @@ ul.alert {
 }
 .article-info {
     font-size: .8rem;
-    color: #777;
+    color: #8B4513; /* 焼きおにぎりの焦げた部分 */
 }
 .article-body {
     margin: 1rem 0;
     padding: 1rem 0;
-    border-top: 1px dotted #ddd;
-    border-bottom: 1px dotted #ddd;
+    border-top: 1px dotted #A0522D; /* 醤油の部分 */
+    border-bottom: 1px dotted #A0522D; /* 醤油の部分 */
 }
 dl.form-list {
     max-width: 600px;
@@ -61,7 +61,7 @@ footer {
     padding: 20px;
     text-align: center;
     font-size: .9rem;
-    color: #777;
+    color: #8B4513; /* 焼きおにぎりの焦げた部分 */
 }
 .article-control {
     display: flex;
@@ -70,15 +70,15 @@ footer {
 button, .btn {
     display: inline-block;
     padding: 2px 8px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(139, 69, 19, 0.2); /* 焦げた部分の薄い色 */
     border-radius: 4px;
-    background: #eee;
+    background: #F5DEB3; /* おにぎりの部分 */
     color: #333;
     font-size: .9rem;
     cursor: pointer;
 }
 button:hover, .btn:hover {
-    background: #ddd;
+    background: #A0522D; /* 醤油の部分 */
 }
 header nav ul {
     display: flex;
