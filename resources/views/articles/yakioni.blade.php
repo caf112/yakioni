@@ -27,4 +27,5 @@
     <img src="/24.jpg" alt="Description of image" class="y-image">
     <img src="/25.jpg" alt="Description of image" class="y-image">
 </article>
+<a href="{{ route('home') }}" class="button">戻る</a>
 @endsection
