@@ -110,7 +110,11 @@ return [
     |
     */
     'attributes' => [
-        'title' => 'タイトル',
-        'body' => '本文',
+        'title' => '企業名',
+        'body' => 'メモ',
+        'summary' => 'イベント名',
+        'start_date' => '開始日時',
+        'end_date' => '終了日時',
+
     ],
 ];
