@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
+use Google_Client;
+use Google_Service_Calendar;
+use Google_Service_Calendar_Event;
+
 class ArticleController extends Controller
 {
     /**
@@ -41,7 +45,10 @@ class ArticleController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:255',
-            'body' => 'required'
+            'body' => 'required',
+            'summary' => 'required',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after_or_equal:start_date'
         ]);
         $article = new Article();
         $article->user_id = \Auth::id();
@@ -51,6 +58,9 @@ class ArticleController extends Controller
         $article->url = $request->url;
         $article->body = $request->body;
         $article->save();
+
+        // Google カレンダーにイベントを追加
+        $this->addEventToGoogleCalendar($request);
 
         return redirect(route('articles.index'));
     }
@@ -114,5 +124,41 @@ class ArticleController extends Controller
         $this->authorize($article);
         $article->delete();
         return redirect(route('articles.index'));
+    }
+
+    private function addEventToGoogleCalendar(Request $request)
+    {
+        $client = $this->getClient();
+        $service = new Google_Service_Calendar($client);
+
+        $calendarId = env('GOOGLE_CALENDAR_ID');
+
+        $event = new Google_Service_Calendar_Event([
+            'summary' => $request->input('summary'),
+            'start' => [
+                'dateTime' => date('c', strtotime($request->input('start_date'))),
+                'timeZone' => 'Asia/Tokyo',
+            ],
+            'end' => [
+                'dateTime' => date('c', strtotime($request->input('end_date'))),
+                'timeZone' => 'Asia/Tokyo',
+            ],
+        ]);
+
+        $service->events->insert($calendarId, $event);
+    }
+
+    private function getClient()
+    {
+        $client = new Google_Client();
+
+        //アプリケーション名
+        $client->setApplicationName('GoogleCalendarAPIのテスト');
+        //権限の指定
+        $client->setScopes(Google_Service_Calendar::CALENDAR_EVENTS);
+        //JSONファイルの指定
+        $client->setAuthConfig(storage_path('app/api-key/calendar-432114-28a55ba789c6.json'));
+
+        return $client;
     }
 }
