@@ -34,7 +34,7 @@
 
     </main>
     <footer>
-        &copy; 就活カレンダー
+        <a href="{{ route('articles.yakioni') }}" class="button">焼きおにぎりを見る</a>
     </footer>
 </body>
 </html>

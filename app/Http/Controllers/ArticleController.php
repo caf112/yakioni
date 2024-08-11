@@ -23,6 +23,12 @@ class ArticleController extends Controller
         return view('articles.index', $data);
     }
 
+    public function yakioni()
+    {
+        
+        return view('articles.yakioni');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

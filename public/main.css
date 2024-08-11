@@ -67,6 +67,19 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+.button {
+    background-color: #F5DEB3; /* Green */
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
 button, .btn {
     display: inline-block;
     padding: 2px 8px;
@@ -92,3 +105,25 @@ header nav ul li {
 header nav ul li a.active {
     color: #fff;
 }
+
+.article-yakioni {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 画像の最小幅を250pxに設定 */
+    gap: 15px; /* 画像間のスペースを広く */
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.y-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.y-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+

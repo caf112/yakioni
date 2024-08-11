@@ -13,5 +13,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resource('/articles', ArticleController::class);
 });
+Route::get('/yakioni', [ArticleController::class, 'yakioni'])->name('articles.yakioni');
 
 //Route::get('/api', [ApiTestController::class, 'test']);
