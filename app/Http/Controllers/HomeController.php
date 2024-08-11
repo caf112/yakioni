@@ -11,10 +11,10 @@ class HomeController extends Controller
     public function index()
     {
         $articles = \Auth::user()->articles()->orderBy('created_at', 'desc')->get();
-        // $compnays = \Auth::user()->companys()->orderBy('created_at', 'desc')->get();
+        $companies = \Auth::user()->companies()->orderBy('created_at', 'desc')->get();
         $data = [
             'articles' => $articles,
-            // 'companys' => $companys,
+            'companies' => $companies,
         ];
         return view('home', $data);
     }

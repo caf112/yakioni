@@ -14,9 +14,9 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companys = Company::all();
-        $data = ['companys' => $companys];
-        return view('companys.index', $data);
+        $companies = Company::all();
+        $data = ['companies' => $companies];
+        return view('companies.index', $data);
     }
 
     /**
@@ -28,7 +28,7 @@ class CompanyController extends Controller
     {
         $company = new Company();
         $data = ['company' => $company];
-        return view('companys.create', $data);
+        return view('companies.create', $data);
     }
 
     /**
@@ -52,7 +52,7 @@ class CompanyController extends Controller
         $company->comment = $request->comment;
         $company->save();
 
-        return redirect(route('companys.index'));
+        return redirect(route('companies.index'));
     }
 
     /**
@@ -64,7 +64,7 @@ class CompanyController extends Controller
     public function show(Company $company)
     {
         $data = ['company' => $company];
-        return view('companys.show', $data);
+        return view('companies.show', $data);
     }
 
     /**
@@ -77,7 +77,7 @@ class CompanyController extends Controller
     {
         $this->authorize($company);
         $data = ['company' => $company];
-        return view('companys.edit', $data);
+        return view('companies.edit', $data);
     }
 
     /**
@@ -100,7 +100,7 @@ class CompanyController extends Controller
         $company->url = $request->url;
         $company->comment = $request->comment;
         $company->save();
-        return redirect(route('companys.show', $company));
+        return redirect(route('companies.show', $company));
     }
 
     /**
@@ -113,6 +113,6 @@ class CompanyController extends Controller
     {
         $this->authorize($company);
         $company->delete();
-        return redirect(route('companys.index'));
+        return redirect(route('companies.index'));
     }
 }

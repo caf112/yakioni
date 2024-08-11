@@ -10,8 +10,8 @@
     <div class="company-comment">{!! nl2br(e($company->comment)) !!}</div>
     @can('update', $company)
     <div class="company-control">
-        <a href="{{ route('companys.edit', $company) }}">編集</a>
-        <form action="{{ route('companys.destroy', $company) }}" method="post">
+        <a href="{{ route('companies.edit', $company) }}">編集</a>
+        <form action="{{ route('companies.destroy', $company) }}" method="post">
             @csrf 
             @method('delete')
             <button type="submit">削除</button>
