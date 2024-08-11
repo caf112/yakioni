@@ -9,6 +9,8 @@
         <input type="radio" name="status" value="1">一次選考
         <input type="radio" name="status" value="2">二次選考
         <input type="radio" name="status" value="3">三次選考
+        <input type="radio" name="status" value="4">内定
+        <input type="radio" name="status" value="5">アーカイブ
     </dd>
     <dt>タグ<sup class="red">*</sup></dt>
     <dd><input type="text" name="tag" value="{{ old('tag', $article->tag) }}"></dd>

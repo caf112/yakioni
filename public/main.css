@@ -51,7 +51,23 @@ ul.alert {
 .article-body {
     margin: 1rem 0;
     padding: 1rem 0;
-    border-top: 1px dotted #A0522D; /* 醤油の部分 */
+     /* 醤油の部分 */
+    border-bottom: 1px dotted #A0522D; /* 醤油の部分 */
+}
+.article-tag {
+    margin: 1rem 0;
+    padding: 1rem 0;
+     /* 醤油の部分 */
+    border-bottom: 1px dotted #A0522D; /* 醤油の部分 */
+}.article-sutatus {
+    margin: 1rem 0;
+    padding: 1rem 0;
+     /* 醤油の部分 */
+    border-bottom: 1px dotted #A0522D; /* 醤油の部分 */
+}.article-url {
+    margin: 1rem 0;
+    padding: 1rem 0;
+     /* 醤油の部分 */
     border-bottom: 1px dotted #A0522D; /* 醤油の部分 */
 }
 dl.form-list {
@@ -103,7 +119,7 @@ header nav ul li {
     margin: 0 10px;
 }
 header nav ul li a.active {
-    color: #fff;
+    color: #228b22;
 }
 
 .article-yakioni {
@@ -129,4 +145,8 @@ header nav ul li a.active {
 
 .red {
     color: red;
+}
+
+.tab-item {
+    color: #228b22;
 }
